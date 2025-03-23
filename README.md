@@ -1,30 +1,29 @@
-Overview
-This batch script automates the process of splitting a video into smaller segments using FFmpeg. It prompts the user for an input video file and splits it into 2-minute segments without re-encoding.
+# FFmpeg Video Splitter  
 
-Features
-✅ User Input Prompt – Enter the file name directly when running the script.
-✅ Fast Processing – Uses -c copy to avoid re-encoding.
-✅ Automatic File Naming – Segments are named as Part01.mp4, Part02.mp4, etc.
+## Overview  
+This batch script allows users to split a video file into smaller segments using FFmpeg. The script prompts for an input video file and processes it without re-encoding, ensuring fast execution and maintaining the original quality.  
 
-Requirements
-FFmpeg must be installed and added to the system path.
-👉 Download FFmpeg
+## Features  
+- Splits video files into **2-minute segments** by default  
+- Preserves the original quality using **copy mode**  
+- Automatically names output files as `Part01.mp4`, `Part02.mp4`, etc.  
+- Requires minimal user input  
 
-Usage
-1️⃣ Run the script (split_video.bat).
-2️⃣ Enter the input file name (e.g., video.mp4).
-3️⃣ The script will create 2-minute segments in the same folder.
+## Requirements  
+- FFmpeg must be installed and added to the system **PATH**  
+  - [Download FFmpeg](https://ffmpeg.org/download.html)  
 
-Manual Command
-If you prefer to run it manually, use:
+## Usage  
+1. Run the script (`split_video.bat`).  
+2. Enter the name of the input video file when prompted.  
+3. The script will generate split video files in the same directory.  
 
-sh
-Copy
-Edit
-ffmpeg -i "input.mp4" -c copy -map 0 -segment_time 00:02:00 -f segment -reset_timestamps 1 Part%02d.mp4
-Customization
-🔹 Change the -segment_time value to adjust the segment duration.
-🔹 Modify the Part%02d.mp4 to customize file naming.
+## Customization  
+- To change the segment length, modify the `-segment_time` value in the script.  
+- To adjust output file naming, modify the `Part%02d.mp4` pattern.  
 
-License
-This project is open-source under the MIT License.
+
+## License  
+This project is released under the **MIT License**.  
+
+---
